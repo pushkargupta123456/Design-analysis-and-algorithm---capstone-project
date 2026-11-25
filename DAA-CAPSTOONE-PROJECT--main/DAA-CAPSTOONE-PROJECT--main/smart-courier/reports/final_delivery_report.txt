@@ -1,0 +1,79 @@
+========================================================================
+          SMART COURIER — FINAL DELIVERY REPORT
+          Generated: 2026-11-16 20:13:18
+========================================================================
+
+VEHICLE CONFIGURATION
+----------------------------------------
+  Capacity          : 100 kg
+  Total parcels     : 15
+  Selected parcels  : 15
+  Rejected parcels  : 0
+
+PRIORITY-SORTED PARCEL LIST (top 20 by deadline / priority / value)
+------------------------------------------------------------------------
+  ID           Name                    Wt  Pri     Deadline     Dest      Val
+  --------------------------------------------------------------------
+  P011         Jewelry Box            1.2   10   2024-01-08        A    490.0
+  P005         Medical Supplies       1.5   10   2024-01-09        C    500.0
+  P013         Pharmaceutical Kit     2.0    9   2024-01-09        C    470.0
+  P007         Laptop Computer        3.0    9   2024-01-10        D    480.0
+  P001         Electronics Package    3.5    9   2024-01-10        A    450.0
+  P015         Camera Equipment       3.3    8   2024-01-11        E    380.0
+  P004         Fragile Glassware      2.8    8   2024-01-11        B    300.0
+  P003         Clothing Box           4.1    6   2024-01-12        B    200.0
+  P009         Toys Set               5.5    6   2024-01-14        E    150.0
+  P002         Books Bundle           7.2    5   2024-01-15        A    120.0
+  P014         Art Supplies           4.8    5   2024-01-16        D    130.0
+  P008         Kitchen Appliance     12.5    5   2024-01-18        D    220.0
+  P006         Office Stationery      6.0    4   2024-01-20        C     80.0
+  P010         Sports Equipment      14.0    4   2024-01-22        E    175.0
+  P012         Furniture Part        15.0    3   2024-01-25        B    100.0
+
+KNAPSACK SELECTION RESULTS
+----------------------------------------
+  Total weight loaded  : 87 kg
+  Remaining capacity   : 13 kg
+  Total delivery value : 4245
+
+  Selected parcels:
+    P011         →        A  wt=1.2  val=490.0
+    P005         →        C  wt=1.5  val=500.0
+    P013         →        C  wt=2.0  val=470.0
+    P007         →        D  wt=3.0  val=480.0
+    P001         →        A  wt=3.5  val=450.0
+    P015         →        E  wt=3.3  val=380.0
+    P004         →        B  wt=2.8  val=300.0
+    P003         →        B  wt=4.1  val=200.0
+    P009         →        E  wt=5.5  val=150.0
+    P002         →        A  wt=7.2  val=120.0
+    P014         →        D  wt=4.8  val=130.0
+    P008         →        D  wt=12.5  val=220.0
+    P006         →        C  wt=6.0  val=80.0
+    P010         →        E  wt=14.0  val=175.0
+    P012         →        B  wt=15.0  val=100.0
+
+SHORTEST PATHS FROM DEPOT
+----------------------------------------
+  Depot → A: Depot → A  (distance: 5.0)
+  Depot → B: Depot → B  (distance: 8.0)
+  Depot → C: Depot → C  (distance: 12.0)
+  Depot → D: Depot → A → D  (distance: 12.0)
+  Depot → E: Depot → A → D → E  (distance: 15.0)
+
+DELIVERY ROUTE (TSP — Nearest Neighbour)
+----------------------------------------
+  Route          : Depot → A → B → C → D → E → Depot
+  Total distance : 38.0
+
+TIMING BREAKDOWN
+----------------------------------------
+  Data loading             :    1.000 ms
+  Merge sort               :    0.045 ms
+  Knapsack DP              :    0.700 ms
+  Dijkstra (all dests)     :    0.034 ms
+  TSP nearest-neighbour    :    0.010 ms
+
+========================================================================
+END OF REPORT
+========================================================================

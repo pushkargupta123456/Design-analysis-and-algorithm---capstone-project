@@ -1,0 +1,616 @@
+
+Welcome to the SMART COURIER SYSTEM!
+Initialising application…
+
+===========================================
+         SMART COURIER SYSTEM
+ Intelligent Parcel Packing & Route Planner
+===========================================
+1.  Load Sample Dataset
+2.  View All Parcels
+3.  Prioritize Parcels (Merge Sort)
+4.  Optimize Package Selection (0/1 Knapsack)
+5.  View Delivery Graph
+6.  Calculate Shortest Paths (Dijkstra)
+7.  Generate Optimized Delivery Route (TSP)
+8.  Run Complete Courier Planning
+9.  Run Performance Benchmarks
+10. Generate Performance Charts
+11. View Final Delivery Report
+0.  Exit
+===========================================
+
+Enter your choice: 
+=== LOAD SAMPLE DATASET ===
+Available datasets:
+  [1] Small  (~15 parcels,  5 destinations)
+  [2] Medium (~150 parcels, 15 destinations)
+  [3] Large  (~700 parcels, 36 destinations)
+
+Select dataset (1/2/3) [default: 1]: Enter vehicle capacity (default 150): 
+Loading parcels from: C:\Users\Anubhav\Desktop\DAA CAPSTONE\smart-courier\data\parcels_small.csv
+Loading delivery graph from: C:\Users\Anubhav\Desktop\DAA CAPSTONE\smart-courier\data\delivery_graph.json
+
+--- Load Summary ---
+  Dataset       : small
+  Parcels loaded: 15
+  Graph nodes   : 9
+  Vehicle cap.  : 100 kg
+--------------------
+[✓] Data loaded successfully!
+
+===========================================
+         SMART COURIER SYSTEM
+ Intelligent Parcel Packing & Route Planner
+===========================================
+1.  Load Sample Dataset
+2.  View All Parcels
+3.  Prioritize Parcels (Merge Sort)
+4.  Optimize Package Selection (0/1 Knapsack)
+5.  View Delivery Graph
+6.  Calculate Shortest Paths (Dijkstra)
+7.  Generate Optimized Delivery Route (TSP)
+8.  Run Complete Courier Planning
+9.  Run Performance Benchmarks
+10. Generate Performance Charts
+11. View Final Delivery Report
+0.  Exit
+===========================================
+
+Enter your choice: 
+=== ALL LOADED PARCELS ===
+ID           Name                   Weight   Priority Deadline       Dest    Value
+----------------------------------------------------------------------------------
+P001         Electronics Package       3.5        9.0 2024-01-10        A    450.0
+P002         Books Bundle              7.2        5.0 2024-01-15        A    120.0
+P003         Clothing Box              4.1        6.0 2024-01-12        B    200.0
+P004         Fragile Glassware         2.8        8.0 2024-01-11        B    300.0
+P005         Medical Supplies          1.5       10.0 2024-01-09        C    500.0
+P006         Office Stationery         6.0        4.0 2024-01-20        C     80.0
+P007         Laptop Computer           3.0        9.0 2024-01-10        D    480.0
+P008         Kitchen Appliance        12.5        5.0 2024-01-18        D    220.0
+P009         Toys Set                  5.5        6.0 2024-01-14        E    150.0
+P010         Sports Equipment         14.0        4.0 2024-01-22        E    175.0
+P011         Jewelry Box               1.2       10.0 2024-01-08        A    490.0
+P012         Furniture Part           15.0        3.0 2024-01-25        B    100.0
+P013         Pharmaceutical Kit        2.0        9.0 2024-01-09        C    470.0
+P014         Art Supplies              4.8        5.0 2024-01-16        D    130.0
+P015         Camera Equipment          3.3        8.0 2024-01-11        E    380.0
+----------------------------------------------------------------------------------
+Total parcels: 15
+
+===========================================
+         SMART COURIER SYSTEM
+ Intelligent Parcel Packing & Route Planner
+===========================================
+1.  Load Sample Dataset
+2.  View All Parcels
+3.  Prioritize Parcels (Merge Sort)
+4.  Optimize Package Selection (0/1 Knapsack)
+5.  View Delivery Graph
+6.  Calculate Shortest Paths (Dijkstra)
+7.  Generate Optimized Delivery Route (TSP)
+8.  Run Complete Courier Planning
+9.  Run Performance Benchmarks
+10. Generate Performance Charts
+11. View Final Delivery Report
+0.  Exit
+===========================================
+
+Enter your choice: 
+=== PRIORITIZE PARCELS (MERGE SORT) ===
+
+Sorting 15 parcels by deadline → priority → value…
+
+--- Original Order (first 10) ---
+  P001 | deadline=2024-01-10 | priority=9.0 | value=450.0
+  P002 | deadline=2024-01-15 | priority=5.0 | value=120.0
+  P003 | deadline=2024-01-12 | priority=6.0 | value=200.0
+  P004 | deadline=2024-01-11 | priority=8.0 | value=300.0
+  P005 | deadline=2024-01-09 | priority=10.0 | value=500.0
+  P006 | deadline=2024-01-20 | priority=4.0 | value=80.0
+  P007 | deadline=2024-01-10 | priority=9.0 | value=480.0
+  P008 | deadline=2024-01-18 | priority=5.0 | value=220.0
+  P009 | deadline=2024-01-14 | priority=6.0 | value=150.0
+  P010 | deadline=2024-01-22 | priority=4.0 | value=175.0
+
+--- Sorted Order (first 10) ---
+  P011 | deadline=2024-01-08 | priority=10.0 | value=490.0
+  P005 | deadline=2024-01-09 | priority=10.0 | value=500.0
+  P013 | deadline=2024-01-09 | priority=9.0 | value=470.0
+  P007 | deadline=2024-01-10 | priority=9.0 | value=480.0
+  P001 | deadline=2024-01-10 | priority=9.0 | value=450.0
+  P015 | deadline=2024-01-11 | priority=8.0 | value=380.0
+  P004 | deadline=2024-01-11 | priority=8.0 | value=300.0
+  P003 | deadline=2024-01-12 | priority=6.0 | value=200.0
+  P009 | deadline=2024-01-14 | priority=6.0 | value=150.0
+  P002 | deadline=2024-01-15 | priority=5.0 | value=120.0
+  … (5 more parcels not shown)
+
+[✓] Merge Sort completed in 0.0591 ms
+
+===========================================
+         SMART COURIER SYSTEM
+ Intelligent Parcel Packing & Route Planner
+===========================================
+1.  Load Sample Dataset
+2.  View All Parcels
+3.  Prioritize Parcels (Merge Sort)
+4.  Optimize Package Selection (0/1 Knapsack)
+5.  View Delivery Graph
+6.  Calculate Shortest Paths (Dijkstra)
+7.  Generate Optimized Delivery Route (TSP)
+8.  Run Complete Courier Planning
+9.  Run Performance Benchmarks
+10. Generate Performance Charts
+11. View Final Delivery Report
+0.  Exit
+===========================================
+
+Enter your choice: 
+=== OPTIMIZE PACKAGE SELECTION (0/1 KNAPSACK) ===
+
+Running 0/1 Knapsack with capacity=100 kg…
+
+--- DP Table Preview ---
+Item                 w=  0 w=  1 w=  2 w=  3 w=  4 w=  5 w=  6 w=  7 w=  8  ... (up to w=100)
+---------------------------------------------------------------------------------------------
+(none)                    0      0      0      0      0      0      0      0      0
+P001                      0      0      0      0    450    450    450    450    450
+P002                      0      0      0      0    450    450    450    450    450
+P003                      0      0      0      0    450    450    450    450    650
+P004                      0      0      0    300    450    450    450    750    750
+P005                      0      0    500    500    500    800    950    950    950
+P006                      0      0    500    500    500    800    950    950    950
+P007                      0      0    500    500    500    980    980    980   1280
+P008                      0      0    500    500    500    980    980    980   1280
+  ... (7 more items not shown)
+
+Optimal value = 4245  (capacity=100)
+
+--- Selected Parcels ---
+  [✓] P001 | weight=3.5 | value=450.0 | dest=A
+  [✓] P002 | weight=7.2 | value=120.0 | dest=A
+  [✓] P003 | weight=4.1 | value=200.0 | dest=B
+  [✓] P004 | weight=2.8 | value=300.0 | dest=B
+  [✓] P005 | weight=1.5 | value=500.0 | dest=C
+  [✓] P006 | weight=6.0 | value=80.0 | dest=C
+  [✓] P007 | weight=3.0 | value=480.0 | dest=D
+  [✓] P008 | weight=12.5 | value=220.0 | dest=D
+  [✓] P009 | weight=5.5 | value=150.0 | dest=E
+  [✓] P010 | weight=14.0 | value=175.0 | dest=E
+  [✓] P011 | weight=1.2 | value=490.0 | dest=A
+  [✓] P012 | weight=15.0 | value=100.0 | dest=B
+  [✓] P013 | weight=2.0 | value=470.0 | dest=C
+  [✓] P014 | weight=4.8 | value=130.0 | dest=D
+  [✓] P015 | weight=3.3 | value=380.0 | dest=E
+
+--- Rejected Parcels ---
+  None rejected.
+
+--- Statistics ---
+  Total selected    : 15
+  Total rejected    : 0
+  Total weight used : 87 kg
+  Remaining capacity: 13 kg
+  Total value packed: 4245
+  Execution time    : 0.8111 ms
+
+===========================================
+         SMART COURIER SYSTEM
+ Intelligent Parcel Packing & Route Planner
+===========================================
+1.  Load Sample Dataset
+2.  View All Parcels
+3.  Prioritize Parcels (Merge Sort)
+4.  Optimize Package Selection (0/1 Knapsack)
+5.  View Delivery Graph
+6.  Calculate Shortest Paths (Dijkstra)
+7.  Generate Optimized Delivery Route (TSP)
+8.  Run Complete Courier Planning
+9.  Run Performance Benchmarks
+10. Generate Performance Charts
+11. View Final Delivery Report
+0.  Exit
+===========================================
+
+Enter your choice: 
+=== DELIVERY GRAPH ===
+
+Nodes (9): Depot, A, B, C, D, E, F, G, H
+
+--- Edge List ---
+  Depot ──[5.0]──▶ A
+  Depot ──[8.0]──▶ B
+  Depot ──[12.0]──▶ C
+  Depot ──[15.0]──▶ F
+  Depot ──[20.0]──▶ H
+  A ──[5.0]──▶ Depot
+  A ──[4.0]──▶ B
+  A ──[7.0]──▶ D
+  A ──[10.0]──▶ E
+  B ──[8.0]──▶ Depot
+  B ──[4.0]──▶ A
+  B ──[6.0]──▶ C
+  B ──[9.0]──▶ E
+  B ──[11.0]──▶ F
+  C ──[12.0]──▶ Depot
+  C ──[6.0]──▶ B
+  C ──[5.0]──▶ D
+  C ──[8.0]──▶ G
+  D ──[7.0]──▶ A
+  D ──[5.0]──▶ C
+  D ──[3.0]──▶ E
+  D ──[14.0]──▶ H
+  E ──[10.0]──▶ A
+  E ──[9.0]──▶ B
+  E ──[3.0]──▶ D
+  E ──[6.0]──▶ F
+  E ──[7.0]──▶ G
+  F ──[11.0]──▶ B
+  F ──[6.0]──▶ E
+  F ──[4.0]──▶ G
+  F ──[9.0]──▶ H
+  F ──[15.0]──▶ Depot
+  G ──[8.0]──▶ C
+  G ──[7.0]──▶ E
+  G ──[4.0]──▶ F
+  G ──[5.0]──▶ H
+  H ──[14.0]──▶ D
+  H ──[9.0]──▶ F
+  H ──[5.0]──▶ G
+  H ──[20.0]──▶ Depot
+
+--- Graph Summary ---
+  Nodes : 9
+  Edges : 40
+  Avg degree: 4.44
+
+===========================================
+         SMART COURIER SYSTEM
+ Intelligent Parcel Packing & Route Planner
+===========================================
+1.  Load Sample Dataset
+2.  View All Parcels
+3.  Prioritize Parcels (Merge Sort)
+4.  Optimize Package Selection (0/1 Knapsack)
+5.  View Delivery Graph
+6.  Calculate Shortest Paths (Dijkstra)
+7.  Generate Optimized Delivery Route (TSP)
+8.  Run Complete Courier Planning
+9.  Run Performance Benchmarks
+10. Generate Performance Charts
+11. View Final Delivery Report
+0.  Exit
+===========================================
+
+Enter your choice: 
+=== SHORTEST PATHS (DIJKSTRA) ===
+
+Using destinations from selected parcels: ['D', 'A', 'C', 'B', 'E']
+
+Running Dijkstra from 'Depot'…
+
+--- Shortest Paths from Depot ---
+  Depot → D: Depot → A → D  [distance: 12.0]
+  Depot → A: Depot → A  [distance: 5.0]
+  Depot → C: Depot → C  [distance: 12.0]
+  Depot → B: Depot → B  [distance: 8.0]
+  Depot → E: Depot → A → D → E  [distance: 15.0]
+
+===========================================
+         SMART COURIER SYSTEM
+ Intelligent Parcel Packing & Route Planner
+===========================================
+1.  Load Sample Dataset
+2.  View All Parcels
+3.  Prioritize Parcels (Merge Sort)
+4.  Optimize Package Selection (0/1 Knapsack)
+5.  View Delivery Graph
+6.  Calculate Shortest Paths (Dijkstra)
+7.  Generate Optimized Delivery Route (TSP)
+8.  Run Complete Courier Planning
+9.  Run Performance Benchmarks
+10. Generate Performance Charts
+11. View Final Delivery Report
+0.  Exit
+===========================================
+
+Enter your choice: 
+=== OPTIMIZED DELIVERY ROUTE (TSP) ===
+
+Running Nearest-Neighbour TSP approximation…
+
+--- Delivery Route ---
+  Depot → A → B → C → D → E → Depot
+
+--- Segment Distances ---
+  Depot → A: 5.0 km
+  A → B: 4.0 km
+  B → C: 6.0 km
+  C → D: 5.0 km
+  D → E: 3.0 km
+  E → Depot: 15.0 km
+
+  Total route distance: 38.0 km
+
+[✓] TSP route generated in 0.0170 ms
+
+===========================================
+         SMART COURIER SYSTEM
+ Intelligent Parcel Packing & Route Planner
+===========================================
+1.  Load Sample Dataset
+2.  View All Parcels
+3.  Prioritize Parcels (Merge Sort)
+4.  Optimize Package Selection (0/1 Knapsack)
+5.  View Delivery Graph
+6.  Calculate Shortest Paths (Dijkstra)
+7.  Generate Optimized Delivery Route (TSP)
+8.  Run Complete Courier Planning
+9.  Run Performance Benchmarks
+10. Generate Performance Charts
+11. View Final Delivery Report
+0.  Exit
+===========================================
+
+Enter your choice: 
+=== RUN COMPLETE COURIER PLANNING ===
+
+Running full pipeline: Sort → Knapsack → Dijkstra → TSP → Report
+This may take a moment for large datasets…
+
+[CourierPlanner] Report written to 'C:\Users\Anubhav\Desktop\DAA CAPSTONE\smart-courier\reports\final_delivery_report.txt'
+--- Step 1: Merge Sort ---
+  Parcels sorted: 15  Time: 0.0450 ms
+
+--- Step 2: 0/1 Knapsack ---
+  Selected: 15  Rejected: 0  Value: 4245  Weight: 87 kg
+
+--- Step 3: Dijkstra Shortest Paths ---
+  Depot → A: 5.0
+  Depot → B: 8.0
+  Depot → C: 12.0
+  Depot → D: 12.0
+  Depot → E: 15.0
+
+--- Step 4: TSP Delivery Route ---
+  Route: Depot → A → B → C → D → E → Depot
+  Total distance: 38.0 km
+
+--- Step 5: Report Generation ---
+  Report saved to: C:\Users\Anubhav\Desktop\DAA CAPSTONE\smart-courier\reports\final_delivery_report.txt
+
+[✓] Complete planning finished successfully!
+
+===========================================
+         SMART COURIER SYSTEM
+ Intelligent Parcel Packing & Route Planner
+===========================================
+1.  Load Sample Dataset
+2.  View All Parcels
+3.  Prioritize Parcels (Merge Sort)
+4.  Optimize Package Selection (0/1 Knapsack)
+5.  View Delivery Graph
+6.  Calculate Shortest Paths (Dijkstra)
+7.  Generate Optimized Delivery Route (TSP)
+8.  Run Complete Courier Planning
+9.  Run Performance Benchmarks
+10. Generate Performance Charts
+11. View Final Delivery Report
+0.  Exit
+===========================================
+
+Enter your choice: 
+=== PERFORMANCE BENCHMARKS ===
+Running benchmarks on all three datasets (small / medium / large).
+This may take several seconds for the large dataset…
+
+
+[Benchmark] === SMALL dataset (15 parcels) ===
+  sort   | merge=0.038 ms  builtin=0.005 ms
+  knapsack | 0.427 ms  cap=51
+  dijkstra | 0.025 ms  nodes=9
+  tsp      | 0.015 ms  nodes=9
+
+[Benchmark] === MEDIUM dataset (150 parcels) ===
+  sort   | merge=0.658 ms  builtin=0.066 ms
+  knapsack | 92.936 ms  cap=1205
+  dijkstra | 0.064 ms  nodes=9
+  tsp      | 0.026 ms  nodes=9
+
+[Benchmark] === LARGE dataset (700 parcels) ===
+  sort   | merge=4.054 ms  builtin=0.440 ms
+  knapsack | 2518.637 ms  cap=6562
+  dijkstra | 0.058 ms  nodes=9
+  tsp      | 0.020 ms  nodes=9
+[Benchmark] Runtime CSV saved to 'C:\Users\Anubhav\Desktop\DAA CAPSTONE\smart-courier\reports\runtime_results.csv'
+[Benchmark] Performance report saved to 'C:\Users\Anubhav\Desktop\DAA CAPSTONE\smart-courier\reports\performance_report.txt'
+Dataset      Algorithm               Time (ms) Complexity          Count
+--------------------------------------------------------------------
+small        merge_sort           0.038499943912029266 O(n log n)             15
+small        builtin_sort         0.005400041118264198 O(n log n)             15
+small        knapsack_01          0.4267999902367592 O(n * W)               15
+small        dijkstra             0.025300076231360435 O((V + E) log V)           15
+small        tsp_nearest_neighbour 0.015099998563528061 O(n^2)                 15
+medium       merge_sort           0.6584000075235963 O(n log n)            150
+medium       builtin_sort         0.0657000346109271 O(n log n)            150
+medium       knapsack_01          92.93560008518398 O(n * W)              150
+medium       dijkstra             0.06440002471208572 O((V + E) log V)          150
+medium       tsp_nearest_neighbour 0.026300083845853806 O(n^2)                150
+large        merge_sort           4.053900018334389 O(n log n)            700
+large        builtin_sort         0.43970008846372366 O(n log n)            700
+large        knapsack_01          2518.6372000025585 O(n * W)              700
+large        dijkstra             0.057999975979328156 O((V + E) log V)          700
+large        tsp_nearest_neighbour 0.02010003663599491 O(n^2)                700
+--------------------------------------------------------------------
+
+[✓] Benchmarks complete. 15 rows recorded.
+
+===========================================
+         SMART COURIER SYSTEM
+ Intelligent Parcel Packing & Route Planner
+===========================================
+1.  Load Sample Dataset
+2.  View All Parcels
+3.  Prioritize Parcels (Merge Sort)
+4.  Optimize Package Selection (0/1 Knapsack)
+5.  View Delivery Graph
+6.  Calculate Shortest Paths (Dijkstra)
+7.  Generate Optimized Delivery Route (TSP)
+8.  Run Complete Courier Planning
+9.  Run Performance Benchmarks
+10. Generate Performance Charts
+11. View Final Delivery Report
+0.  Exit
+===========================================
+
+Enter your choice: 
+=== GENERATE PERFORMANCE CHARTS ===
+Generating charts from benchmark data…
+
+[Benchmark] === SMALL dataset (15 parcels) ===
+  sort   | merge=0.037 ms  builtin=0.005 ms
+  knapsack | 0.407 ms  cap=51
+  dijkstra | 0.027 ms  nodes=9
+  tsp      | 0.017 ms  nodes=9
+
+[Benchmark] === MEDIUM dataset (150 parcels) ===
+  sort   | merge=0.842 ms  builtin=0.086 ms
+  knapsack | 93.756 ms  cap=1205
+  dijkstra | 0.052 ms  nodes=9
+  tsp      | 0.019 ms  nodes=9
+
+[Benchmark] === LARGE dataset (700 parcels) ===
+  sort   | merge=4.383 ms  builtin=0.524 ms
+  knapsack | 2542.028 ms  cap=6562
+  dijkstra | 0.069 ms  nodes=9
+  tsp      | 0.032 ms  nodes=9
+[Benchmark] Runtime CSV saved to 'C:\Users\Anubhav\Desktop\DAA CAPSTONE\smart-courier\reports\runtime_results.csv'
+[Benchmark] Performance report saved to 'C:\Users\Anubhav\Desktop\DAA CAPSTONE\smart-courier\reports\performance_report.txt'
+[Benchmark] 5 charts saved to 'C:\Users\Anubhav\Desktop\DAA CAPSTONE\smart-courier\charts'
+
+[✓] Charts saved to: C:\Users\Anubhav\Desktop\DAA CAPSTONE\smart-courier\charts
+    Open the 'charts/' folder to view the PNG files.
+
+===========================================
+         SMART COURIER SYSTEM
+ Intelligent Parcel Packing & Route Planner
+===========================================
+1.  Load Sample Dataset
+2.  View All Parcels
+3.  Prioritize Parcels (Merge Sort)
+4.  Optimize Package Selection (0/1 Knapsack)
+5.  View Delivery Graph
+6.  Calculate Shortest Paths (Dijkstra)
+7.  Generate Optimized Delivery Route (TSP)
+8.  Run Complete Courier Planning
+9.  Run Performance Benchmarks
+10. Generate Performance Charts
+11. View Final Delivery Report
+0.  Exit
+===========================================
+
+Enter your choice: 
+=== FINAL DELIVERY REPORT ===
+========================================================================
+          SMART COURIER — FINAL DELIVERY REPORT
+          Generated: 2026-11-16 20:13:18
+========================================================================
+
+VEHICLE CONFIGURATION
+----------------------------------------
+  Capacity          : 100 kg
+  Total parcels     : 15
+  Selected parcels  : 15
+  Rejected parcels  : 0
+
+PRIORITY-SORTED PARCEL LIST (top 20 by deadline / priority / value)
+------------------------------------------------------------------------
+  ID           Name                    Wt  Pri     Deadline     Dest      Val
+  --------------------------------------------------------------------
+  P011         Jewelry Box            1.2   10   2024-01-08        A    490.0
+  P005         Medical Supplies       1.5   10   2024-01-09        C    500.0
+  P013         Pharmaceutical Kit     2.0    9   2024-01-09        C    470.0
+  P007         Laptop Computer        3.0    9   2024-01-10        D    480.0
+  P001         Electronics Package    3.5    9   2024-01-10        A    450.0
+  P015         Camera Equipment       3.3    8   2024-01-11        E    380.0
+  P004         Fragile Glassware      2.8    8   2024-01-11        B    300.0
+  P003         Clothing Box           4.1    6   2024-01-12        B    200.0
+  P009         Toys Set               5.5    6   2024-01-14        E    150.0
+  P002         Books Bundle           7.2    5   2024-01-15        A    120.0
+  P014         Art Supplies           4.8    5   2024-01-16        D    130.0
+  P008         Kitchen Appliance     12.5    5   2024-01-18        D    220.0
+  P006         Office Stationery      6.0    4   2024-01-20        C     80.0
+  P010         Sports Equipment      14.0    4   2024-01-22        E    175.0
+  P012         Furniture Part        15.0    3   2024-01-25        B    100.0
+
+KNAPSACK SELECTION RESULTS
+----------------------------------------
+  Total weight loaded  : 87 kg
+  Remaining capacity   : 13 kg
+  Total delivery value : 4245
+
+  Selected parcels:
+    P011         →        A  wt=1.2  val=490.0
+    P005         →        C  wt=1.5  val=500.0
+    P013         →        C  wt=2.0  val=470.0
+    P007         →        D  wt=3.0  val=480.0
+    P001         →        A  wt=3.5  val=450.0
+    P015         →        E  wt=3.3  val=380.0
+    P004         →        B  wt=2.8  val=300.0
+    P003         →        B  wt=4.1  val=200.0
+    P009         →        E  wt=5.5  val=150.0
+    P002         →        A  wt=7.2  val=120.0
+    P014         →        D  wt=4.8  val=130.0
+    P008         →        D  wt=12.5  val=220.0
+    P006         →        C  wt=6.0  val=80.0
+    P010         →        E  wt=14.0  val=175.0
+    P012         →        B  wt=15.0  val=100.0
+
+SHORTEST PATHS FROM DEPOT
+----------------------------------------
+  Depot → A: Depot → A  (distance: 5.0)
+  Depot → B: Depot → B  (distance: 8.0)
+  Depot → C: Depot → C  (distance: 12.0)
+  Depot → D: Depot → A → D  (distance: 12.0)
+  Depot → E: Depot → A → D → E  (distance: 15.0)
+
+DELIVERY ROUTE (TSP — Nearest Neighbour)
+----------------------------------------
+  Route          : Depot → A → B → C → D → E → Depot
+  Total distance : 38.0
+
+TIMING BREAKDOWN
+----------------------------------------
+  Data loading             :    1.000 ms
+  Merge sort               :    0.045 ms
+  Knapsack DP              :    0.700 ms
+  Dijkstra (all dests)     :    0.034 ms
+  TSP nearest-neighbour    :    0.010 ms
+
+========================================================================
+END OF REPORT
+========================================================================
+
+
+===========================================
+         SMART COURIER SYSTEM
+ Intelligent Parcel Packing & Route Planner
+===========================================
+1.  Load Sample Dataset
+2.  View All Parcels
+3.  Prioritize Parcels (Merge Sort)
+4.  Optimize Package Selection (0/1 Knapsack)
+5.  View Delivery Graph
+6.  Calculate Shortest Paths (Dijkstra)
+7.  Generate Optimized Delivery Route (TSP)
+8.  Run Complete Courier Planning
+9.  Run Performance Benchmarks
+10. Generate Performance Charts
+11. View Final Delivery Report
+0.  Exit
+===========================================
+
+Enter your choice: 
+Thank you for using Smart Courier System. Goodbye!

@@ -1,0 +1,25 @@
+{
+  "nodes": ["Depot","A","B","C","D","E","F","G","H"],
+  "edges": [
+    {"from":"Depot","to":"A","distance":5},
+    {"from":"Depot","to":"B","distance":8},
+    {"from":"Depot","to":"C","distance":12},
+    {"from":"A","to":"B","distance":4},
+    {"from":"A","to":"D","distance":7},
+    {"from":"A","to":"E","distance":10},
+    {"from":"B","to":"C","distance":6},
+    {"from":"B","to":"E","distance":9},
+    {"from":"B","to":"F","distance":11},
+    {"from":"C","to":"D","distance":5},
+    {"from":"C","to":"G","distance":8},
+    {"from":"D","to":"E","distance":3},
+    {"from":"D","to":"H","distance":14},
+    {"from":"E","to":"F","distance":6},
+    {"from":"E","to":"G","distance":7},
+    {"from":"F","to":"G","distance":4},
+    {"from":"F","to":"H","distance":9},
+    {"from":"G","to":"H","distance":5},
+    {"from":"Depot","to":"F","distance":15},
+    {"from":"Depot","to":"H","distance":20}
+  ]
+}

@@ -1,0 +1,48 @@
+========================================================================
+       SMART COURIER — ALGORITHM PERFORMANCE REPORT
+       Generated: 2026-11-16 20:13:24
+========================================================================
+
+ALGORITHM: MERGE_SORT
+  Complexity : O(n log n) — divide and conquer
+  Results    :
+    dataset=small     parcels=15      nodes=9     time=0.037 ms
+    dataset=medium    parcels=150     nodes=9     time=0.842 ms
+    dataset=large     parcels=700     nodes=9     time=4.383 ms
+  Observation: Runtime grew 117.2× from smallest to largest dataset.
+
+ALGORITHM: BUILTIN_SORT
+  Complexity : O(n log n) — Timsort (Python built-in)
+  Results    :
+    dataset=small     parcels=15      nodes=9     time=0.005 ms
+    dataset=medium    parcels=150     nodes=9     time=0.086 ms
+    dataset=large     parcels=700     nodes=9     time=0.524 ms
+  Observation: Runtime grew 102.8× from smallest to largest dataset.
+
+ALGORITHM: KNAPSACK_01
+  Complexity : O(n × W)  — 0/1 DP, pseudo-polynomial
+  Results    :
+    dataset=small     parcels=15      nodes=9     time=0.407 ms
+    dataset=medium    parcels=150     nodes=9     time=93.756 ms
+    dataset=large     parcels=700     nodes=9     time=2542.028 ms
+  Observation: Runtime grew 6248.8× from smallest to largest dataset.
+
+ALGORITHM: DIJKSTRA
+  Complexity : O((V + E) log V) — min-heap priority queue
+  Results    :
+    dataset=small     parcels=15      nodes=9     time=0.027 ms
+    dataset=medium    parcels=150     nodes=9     time=0.052 ms
+    dataset=large     parcels=700     nodes=9     time=0.069 ms
+  Observation: Runtime grew 2.5× from smallest to largest dataset.
+
+ALGORITHM: TSP_NEAREST_NEIGHBOUR
+  Complexity : O(n²)    — greedy nearest-neighbour heuristic
+  Results    :
+    dataset=small     parcels=15      nodes=9     time=0.017 ms
+    dataset=medium    parcels=150     nodes=9     time=0.019 ms
+    dataset=large     parcels=700     nodes=9     time=0.032 ms
+  Observation: Runtime grew 1.9× from smallest to largest dataset.
+
+========================================================================
+END OF PERFORMANCE REPORT
+========================================================================

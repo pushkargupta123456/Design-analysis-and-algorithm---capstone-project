@@ -1,0 +1,46 @@
+dataset,algorithm,execution_time_ms,complexity,parcel_count,node_count
+small,merge_sort,0.04429998807609081,O(n log n),15,9
+small,builtin_sort,0.00600004568696022,O(n log n),15,9
+small,knapsack_01,0.5954999942332506,O(n * W),15,9
+small,dijkstra,0.031200004741549492,O((V + E) log V),15,9
+small,tsp_nearest_neighbour,0.026999972760677338,O(n^2),15,9
+medium,merge_sort,0.6136000156402588,O(n log n),150,9
+medium,builtin_sort,0.06440002471208572,O(n log n),150,9
+medium,knapsack_01,89.63839989155531,O(n * W),150,9
+medium,dijkstra,0.05279993638396263,O((V + E) log V),150,9
+medium,tsp_nearest_neighbour,0.037400051951408386,O(n^2),150,9
+large,merge_sort,3.73189989477396,O(n log n),700,9
+large,builtin_sort,0.4050000570714474,O(n log n),700,9
+large,knapsack_01,3078.0740999616683,O(n * W),700,9
+large,dijkstra,0.0716999638825655,O((V + E) log V),700,9
+large,tsp_nearest_neighbour,0.032400013878941536,O(n^2),700,9
+small,merge_sort,0.038499943912029266,O(n log n),15,9
+small,builtin_sort,0.005400041118264198,O(n log n),15,9
+small,knapsack_01,0.4267999902367592,O(n * W),15,9
+small,dijkstra,0.025300076231360435,O((V + E) log V),15,9
+small,tsp_nearest_neighbour,0.015099998563528061,O(n^2),15,9
+medium,merge_sort,0.6584000075235963,O(n log n),150,9
+medium,builtin_sort,0.0657000346109271,O(n log n),150,9
+medium,knapsack_01,92.93560008518398,O(n * W),150,9
+medium,dijkstra,0.06440002471208572,O((V + E) log V),150,9
+medium,tsp_nearest_neighbour,0.026300083845853806,O(n^2),150,9
+large,merge_sort,4.053900018334389,O(n log n),700,9
+large,builtin_sort,0.43970008846372366,O(n log n),700,9
+large,knapsack_01,2518.6372000025585,O(n * W),700,9
+large,dijkstra,0.057999975979328156,O((V + E) log V),700,9
+large,tsp_nearest_neighbour,0.02010003663599491,O(n^2),700,9
+small,merge_sort,0.037400051951408386,O(n log n),15,9
+small,builtin_sort,0.005100038833916187,O(n log n),15,9
+small,knapsack_01,0.40680007077753544,O(n * W),15,9
+small,dijkstra,0.02729997504502535,O((V + E) log V),15,9
+small,tsp_nearest_neighbour,0.01650000922381878,O(n^2),15,9
+medium,merge_sort,0.8418000070378184,O(n log n),150,9
+medium,builtin_sort,0.0860999571159482,O(n log n),150,9
+medium,knapsack_01,93.75629993155599,O(n * W),150,9
+medium,dijkstra,0.05249993409961462,O((V + E) log V),150,9
+medium,tsp_nearest_neighbour,0.019200029782950878,O(n^2),150,9
+large,merge_sort,4.383099963888526,O(n log n),700,9
+large,builtin_sort,0.5243000341579318,O(n log n),700,9
+large,knapsack_01,2542.0276999939233,O(n * W),700,9
+large,dijkstra,0.06879994180053473,O((V + E) log V),700,9
+large,tsp_nearest_neighbour,0.03160000778734684,O(n^2),700,9
